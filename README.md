@@ -1,2 +1,1 @@
-# supla-rss
- 
+# Unofficial Supla feed builder

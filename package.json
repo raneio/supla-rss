@@ -1,0 +1,24 @@
+{
+  "name": "supla-rss",
+  "version": "0.0.1",
+  "description": "Unofficial Supla RSS feeds",
+  "dependencies": {
+    "fast-xml-parser": "^3.12.20",
+    "node-fetch": "^2.6.0",
+    "podcast": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raneio/supla-rss.git"
+  },
+  "author": "Rane Ahonen, Rane.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raneio/supla-rss/issues"
+  },
+  "homepage": "https://github.com/raneio/supla-rss#readme"
+}

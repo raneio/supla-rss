@@ -1,0 +1,13 @@
+[build]
+publish = "public"
+functions = "functions"
+
+[[redirects]]
+from = "/feed/:series/:filter/"
+to = "/.netlify/functions/feed-builder/?series=:series&filter=:filter&"
+status = 200
+
+[[redirects]]
+from = "/feed/:series/"
+to = "/.netlify/functions/feed-builder/?series=:series&"
+status = 200
