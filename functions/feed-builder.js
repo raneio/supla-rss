@@ -43,6 +43,14 @@ exports.handler = async (event, context) => {
     .then(response => response.json())
     .catch(error => console.error(error));
 
+  // return {
+  //   statusCode: 200,
+  //   body: JSON.stringify(rawEpisodes),
+  //   headers: {
+  //     "content-type": "application/json"
+  //   }
+  // };
+
   const episodes = await Promise.all(
     rawEpisodes.items
       .filter(
@@ -69,6 +77,7 @@ exports.handler = async (event, context) => {
             enclosure: {
               url: response.Playerdata.Clip.PlayBack.Media.StreamURLs.Audio
             },
+            itunesDuration: episode.timebar.end,
             itunesImage: episode.media.images["1280x720"]
           }))
           .catch(error => console.error(error));
