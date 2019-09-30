@@ -4,22 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Unofficial Supla Feeds</title>
+    <title>Epäviralliset Supla RSS-fiidit Suplaan</title>
   </head>
   <body>
-    <h1>Epävirallinen Supla RSS-syöte</h1>
-    <div>
-      Esimerkit:
-      <ul>
-        <li>
-          <a href="/feed/total%20hockey%20forever">Total Hockey Forever</a>
-        </li>
-        <li>
-          <a href="/feed/aamulypsy/koko%20shitti"
-            >Aamulypsyn jaksot jotka sisältävät tekstin "koko shitti"</a
-          >
-        </li>
-      </ul>
-    </div>
+    <h1>Epäviralliset RSS-fiidit Suplaan</h1>
+    <div id="list-of-series"><strong>Ladataan sarjoja...</strong></div>
+    <p>Voit suodattaa jaksoja lisäämällä URL:n loppuun suodatettavan tekstin. Esimerkiksi Aaamulypsyn kokonaisten jaksojen otsikot sisältävät "Koko Shitti" termin, joten URL tulee muodossa  <a href="/feed/2256169/koko%20shitti">https://supla.netlify.com/feed/2256169/koko%20shitti</a></a></p>
+    
+
+    <script>
+      fetch(
+        `https://prod-component-api.nm-services.nelonenmedia.fi/api/component/3201?offset=0&limit=1000&app=supla&client=web`
+      )
+        .then(response => response.json())
+        .then(response => {
+          const listItems = response.items.reduce((accumulator, series) => {
+            return accumulator + `
+                <li>
+                    <a href="/feed/${series.id}">${series.title}</a>
+                </li>`;
+          }, '');
+
+          document.getElementById("list-of-series").innerHTML = `<ul>${listItems}</ul>`;
+        })
+        .catch(error => {
+            document.getElementById("list-of-series").innerHTML = `<em>Sarjojen haku epäonnistui :(</em>`;
+            console.error(error)
+        });
+    </script>
   </body>
 </html>

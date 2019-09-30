@@ -1,6 +1,6 @@
 {
   "name": "supla-rss",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Unofficial Supla RSS feeds",
   "dependencies": {
     "fast-xml-parser": "^3.12.20",
