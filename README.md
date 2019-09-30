@@ -1,1 +1,3 @@
-# Unofficial Supla feed builder
+# Unofficial Supla RSS feeds
+
+https://supla.netlify.com
