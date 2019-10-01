@@ -26,7 +26,7 @@
         .then(response => {
           const listItems = response.items.reduce((accumulator, series) => {
             if (typeof series.id !== "number") return accumulator;
-            const title = series.title.replace(/[^a-zA-Z0-9 #]/g, "");
+            const title = series.title.replace(/[^a-z0-9 #-äöå:]/gi, "");
 
             return (
               accumulator +
