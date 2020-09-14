@@ -4,7 +4,7 @@
   "description": "Unofficial Supla RSS feeds",
   "dependencies": {
     "fast-xml-parser": "^3.12.20",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "podcast": "^1.1.0"
   },
   "devDependencies": {},
