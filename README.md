@@ -1,3 +1,3 @@
 # Unofficial Supla RSS feeds
 
-https://supla.netlify.com
+https://supla.b-cdn.net
